@@ -1,65 +1,83 @@
 # RubyFever
 
-
 A Ruby on Rails application.
+
+<div align="center">
+  <img src=".github/assets/github_landing.png" width="1080" height="480" />
+</div>
+
+---
 
 ## Prerequisites
 
-- Ruby >= 4.0 (check with `ruby -v`)
-- Rails 8.1.2 (`gem install rails`)
-- SQLite3 (default) or another supported database
-- Bundler (`gem install bundler`)
+| Requirement | Version / Install |
+|-------------|-------------------|
+| Ruby        | `>= 4.0` — check with `ruby -v` |
+| Rails       | `8.1.2` — `gem install rails` |
+| SQLite3     | Default (or another supported database) |
+| Bundler     | `gem install bundler` |
+
+---
 
 ## Setup
 
-Install dependencies:
+**1. Install dependencies**
 
 ```bash
 bundle install
 ```
 
-Set up the database:
+**2. Set up the database**
 
 ```bash
 rails db:setup
 ```
 
-Run the development server:
+**3. Run the development server**
 
 ```bash
-rails server # default 3000
-rails s -p 4000 # specified 4000
+rails server          # default port 3000
+rails s -p 4000       # custom port 4000
 ```
 
+---
 
 ## Development
 
-* Models: `app/models`
-* Controllers: `app/controllers`
-* Views: `app/views`
-* Routes: `config/routes.rb`
+### Key Directories
 
-Generate resources:
+| Path | Purpose |
+|------|---------|
+| `app/models` | ActiveRecord models |
+| `app/controllers` | Request handling logic |
+| `app/views` | ERB templates |
+| `config/routes.rb` | Route definitions |
+
+### Generate Resources
 
 ```bash
 rails generate model User name:string email:string
 rails generate controller Home index
 ```
 
-Run migrations:
+### Run Migrations
 
 ```bash
 rails db:migrate
 ```
 
+---
+
 ## Testing
 
-Rails comes with Minitest by default:
+Rails ships with **Minitest** by default:
 
 ```bash
 rails test
 ```
 
-## Notes
-This project uses Rails’ **full-stack framework**, including ORM (ActiveRecord), routing, views, and assets.
 ---
+
+## Notes
+
+> This project uses the Rails **full-stack framework**, including ORM (ActiveRecord), routing, views, and the asset pipeline.

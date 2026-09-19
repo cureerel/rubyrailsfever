@@ -1,0 +1,490 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Helvetica,
+    Arial,
+    sans-serif;
+}
+
+.github-landing {
+  min-height: 100vh;
+  overflow: hidden;
+  color: #ffffff;
+  background:
+    radial-gradient(
+      ellipse 60% 45% at 50% 100%,
+      rgba(96, 62, 255, 0.45),
+      transparent 65%
+    ),
+    linear-gradient(
+      180deg,
+      #070b50 0%,
+      #090b42 48%,
+      #10133d 100%
+    );
+}
+
+
+/* Navigation */
+
+.github-nav {
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  padding: 14px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  background: rgba(5, 8, 62, 0.65);
+}
+
+.github-logo {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  color: #ffffff;
+}
+
+.github-logo svg {
+  width: 32px;
+  height: 32px;
+}
+
+.github-nav-links {
+  display: none;
+}
+
+.github-nav-actions {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.search-button,
+.signin-button,
+.signup-button {
+  height: 38px;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.search-button {
+  width: 42px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: transparent;
+}
+
+.search-button svg {
+  width: 19px;
+  height: 19px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+}
+
+.signin-button,
+.signup-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 14px;
+  text-decoration: none;
+}
+
+.signin-button {
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.signup-button {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+
+/* Hero */
+
+.github-hero {
+  position: relative;
+  min-height: calc(100vh - 76px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px 20px 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  max-width: 850px;
+  text-align: center;
+}
+
+.hero-content h1 {
+  margin: 0;
+  font-size: clamp(44px, 11vw, 76px);
+  line-height: 0.98;
+  letter-spacing: -0.055em;
+  font-weight: 500;
+}
+
+.hero-description {
+  max-width: 720px;
+  margin: 30px auto 0;
+  font-size: 17px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+
+/* Hero buttons */
+
+.hero-actions {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 865px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 38px auto 0;
+}
+
+.email-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 6px;
+  border-radius: 10px;
+  background: #f6f6f8;
+}
+
+.email-form input {
+  width: 100%;
+  height: 48px;
+  border: 0;
+  outline: 0;
+  padding: 0 18px;
+  border-radius: 6px;
+  background: transparent;
+  color: #24292f;
+  font-size: 16px;
+}
+
+.email-form input::placeholder {
+  color: #555b63;
+}
+
+.email-form button {
+  height: 48px;
+  border: 0;
+  border-radius: 6px;
+  padding: 0 24px;
+  background: #1a9c46;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.copilot-button {
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 24px;
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  border-radius: 8px;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+
+/* Artwork */
+
+.hero-art {
+  position: relative;
+  width: 100%;
+  height: 330px;
+  margin-top: auto;
+  overflow: hidden;
+}
+
+.glow {
+  position: absolute;
+  left: 50%;
+  bottom: -170px;
+  width: 720px;
+  height: 430px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background:
+    radial-gradient(
+      ellipse,
+      rgba(139, 94, 255, 0.95) 0%,
+      rgba(83, 62, 255, 0.5) 35%,
+      rgba(44, 32, 150, 0.15) 62%,
+      transparent 72%
+    );
+  filter: blur(18px);
+}
+
+
+/* Decorative characters */
+
+.character {
+  position: absolute;
+  z-index: 3;
+  width: 76px;
+  height: 76px;
+  border-radius: 42% 58% 55% 45%;
+  background: linear-gradient(
+    145deg,
+    #ff86e8,
+    #8d4fff
+  );
+  box-shadow:
+    0 0 25px rgba(203, 92, 255, 0.8),
+    inset -12px -10px 20px rgba(92, 33, 173, 0.4);
+}
+
+.character-left {
+  left: 40%;
+  bottom: 28px;
+  transform: rotate(-18deg);
+}
+
+.character-right {
+  left: 58%;
+  bottom: 105px;
+  width: 70px;
+  height: 70px;
+  transform: rotate(12deg);
+}
+
+.character-face {
+  position: absolute;
+  width: 34px;
+  height: 25px;
+  left: 22px;
+  top: 23px;
+  border-radius: 50%;
+  background: #151344;
+  transform: rotate(-8deg);
+}
+
+.character-face span {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  top: 8px;
+  border-radius: 50%;
+  background: #56d7ff;
+}
+
+.character-face span:first-child {
+  left: 8px;
+}
+
+.character-face span:last-child {
+  right: 8px;
+}
+
+.character-right .character-face {
+  transform: rotate(8deg);
+}
+
+
+/* Stars */
+
+.star {
+  position: absolute;
+  z-index: 4;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+  text-shadow: 0 0 12px #ffffff;
+}
+
+.star-1 {
+  left: 45%;
+  bottom: 130px;
+}
+
+.star-2 {
+  left: 53%;
+  bottom: 165px;
+}
+
+.star-3 {
+  left: 57%;
+  bottom: 65px;
+}
+
+.star-4 {
+  left: 39%;
+  bottom: 75px;
+}
+
+.star-5 {
+  left: 61%;
+  bottom: 125px;
+}
+
+
+/* Desktop */
+
+@media (min-width: 768px) {
+
+  .github-nav {
+    padding: 12px 36px;
+  }
+
+  .github-nav-links {
+    display: flex;
+    align-items: center;
+    gap: 26px;
+    margin-left: 28px;
+  }
+
+  .github-nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  .github-nav-links span {
+    margin-left: 4px;
+    font-size: 13px;
+  }
+
+  .github-nav-actions {
+    gap: 10px;
+  }
+
+  .github-hero {
+    padding-top: 192px;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(58px, 6vw, 76px);
+  }
+
+  .hero-description {
+    margin-top: 28px;
+    font-size: 20px;
+  }
+
+  .hero-actions {
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: center;
+    margin-top: 38px;
+  }
+
+  .email-form {
+    flex: 1;
+    max-width: 530px;
+    flex-direction: row;
+    align-items: center;
+    padding: 5px;
+  }
+
+  .email-form input {
+    min-width: 0;
+    flex: 1;
+  }
+
+  .email-form button {
+    flex-shrink: 0;
+    height: 54px;
+  }
+
+  .copilot-button {
+    flex-shrink: 0;
+    min-width: 315px;
+    height: 64px;
+  }
+
+  .hero-art {
+    height: 360px;
+  }
+
+  .character {
+    width: 86px;
+    height: 86px;
+  }
+
+  .character-left {
+    left: calc(50% - 170px);
+  }
+
+  .character-right {
+    left: calc(50% + 70px);
+    width: 78px;
+    height: 78px;
+  }
+}
+
+
+/* Large desktop */
+
+@media (min-width: 1200px) {
+
+  .github-nav {
+    padding-left: 36px;
+    padding-right: 36px;
+  }
+
+  .github-nav-links {
+    gap: 28px;
+  }
+
+  .github-hero {
+    padding-top: 192px;
+  }
+
+  .hero-content {
+    max-width: 900px;
+  }
+
+  .hero-content h1 {
+    font-size: 76px;
+  }
+
+  .hero-description {
+    max-width: 720px;
+    font-size: 20px;
+  }
+
+  .hero-art {
+    height: 390px;
+  }
+
+  .glow {
+    width: 900px;
+    height: 500px;
+  }
+}
