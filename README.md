@@ -1,4 +1,4 @@
-# RubyFever
+# RubyRailsFever
 
 A Ruby on Rails application.
 
@@ -81,3 +81,9 @@ rails test
 ## Notes
 
 > This project uses the Rails **full-stack framework**, including ORM (ActiveRecord), routing, views, and the asset pipeline.
+
+## DockerImage
+
+```bash
+docker pull cureere/rubyrailsfever:1.1.0
+```

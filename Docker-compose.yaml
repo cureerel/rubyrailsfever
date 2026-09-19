@@ -1,0 +1,65 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        RUBY_VERSION: "4.0.2"
+
+    image: rubyrailsfever:1.0.0
+    container_name: rubyrailsfever
+    restart: unless-stopped
+
+    ports:
+      - "3000:3000"
+
+    environment:
+      RAILS_ENV: production
+      RAILS_MASTER_KEY: ${RAILS_MASTER_KEY}
+      RAILS_LOG_TO_STDOUT: "1"
+      RAILS_SERVE_STATIC_FILES: "1"
+      DATABASE_URL: sqlite3:/rails/storage/production.sqlite3
+
+    volumes:
+      - rails_storage:/rails/storage
+      - rails_log:/rails/log
+
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:80/up"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
+
+  dev:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+      args:
+        RUBY_VERSION: "4.0.2"
+
+    image: rubyfever-dev:1.0.0
+    container_name: rubyrailsfever-dev
+
+    ports:
+      - "3000:3000"
+
+    environment:
+      RAILS_ENV: development
+
+    volumes:
+      - .:/rails
+      - bundle:/usr/local/bundle
+
+    command:
+      - ./bin/rails
+      - server
+      - -b
+      - 0.0.0.0
+      - -p
+      - "3000"
+
+volumes:
+  rails_storage:
+  rails_log:
+  bundle:
