@@ -85,5 +85,5 @@ rails test
 ## DockerImage
 
 ```bash
-docker pull cureere/rubyrailsfever:1.1.0
+docker pull cureerel/rubyrailsfever:1.0.0
 ```
